@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Tugas Seal</title>
+    <script>
+        function showBiodata(anggota) {
+            const biodataElements = document.querySelectorAll('.biodata');
+            biodataElements.forEach(element => {
+                element.style.display = 'none';
+            });
+            document.getElementById(anggota).style.display = 'block';
+        }
+
+        function openPopup(imageSrc) {
+            const popup = document.getElementById('imagePopup');
+            const popupImage = document.getElementById('popupImage');
+            popupImage.src = imageSrc;
+            popup.style.display = 'flex';
+        }
+
+        function closePopup() {
+            document.getElementById('imagePopup').style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Biodata Anggota Kelompok</h1>
+        <p>Silakan pilih salah satu anggota untuk melihat biodata mereka.</p>
+    </header>
+
+    <div class="container">
+        <ul class="anggota-list">
+            <li onclick="showBiodata('anggota1')">Anggota 1: Delia Oktaviana Azzahra</li>
+            <li onclick="showBiodata('anggota2')">Anggota 2: Muhammad Revanza</li>
+            <li onclick="showBiodata('anggota3')">Anggota 3: Wilda Sari Pane</li>
+            <li onclick="showBiodata('anggota4')">Anggota 4: Monalisa</li>
+            <li onclick="showBiodata('anggota5')">Anggota 5: Sania Bulan Tanjung</li>
+            <li onclick="showBiodata('anggota6')">Anggota 6: Fathan Surya Azinuddin</li>
+            <li onclick="showBiodata('anggota7')">Anggota 7: Bagas Felicia Rakhim</li>
+        </ul>
+
+          <!-- Biodata Anggota 1 -->
+          <div id="anggota1" class="biodata" style="display: none;">
+            <h2>Biodata Anggota 1</h2>
+            <img src="delia.jpeg" alt="Foto Profil Delia" class="profil-img" onclick="openPopup('delia.jpeg')">
+            <p><strong>Nama:</strong> Delia Oktaviana Azzahra</p>
+            <p><strong>Asal:</strong> Purwokerto</p>
+            <p><strong>Username:</strong> delia</p>
+            <p><strong>Home Directory:</strong> /home/delia</p>
+            <p><strong>Bukti Login SSH:</strong></p>
+            <img src="ssh-delia.jpg" alt="Bukti Login SSH Delia" class="ssh-img" onclick="openPopup('ssh-delia.jpg')">
+            <p><strong>Role:</strong> </p>
+        </div>
+
+        <!-- Biodata Anggota 2 -->
+        <div id="anggota2" class="biodata" style="display: none;">
+            <h2>Biodata Anggota 2</h2>
+            <img src="revanza.jpg" alt="Foto Profil Revanza" class="profil-img" onclick="openPopup('revanza.jpeg')">
+            <p><strong>Nama:</strong> Muhammad Revanza</p>
+            <p><strong>Asal:</strong> Gresik</p>
+            <p><strong>Username:</strong> revanza</p>
+            <p><strong>Home Directory:</strong> /home/revanza</p>
+            <p><strong>Bukti Login SSH:</strong></p>
+            <img src="ssh-revanza.jpg" alt="Bukti Login SSH Revanza" class="ssh-img" onclick="openPopup('ssh-revanza.jpg')">
+            <p><strong>Role:</strong> </p>
+        </div>
+
+        <!-- Biodata Anggota 3 -->
+        <div id="anggota3" class="biodata" style="display: none;">
+            <h2>Biodata Anggota 3</h2>
+            <img src="wilda.jpeg" alt="Foto Profil Wilda" class="profil-img" onclick="openPopup('wilda.jpeg')">
+            <p><strong>Nama:</strong> Wilda Sari Pane</p>
+            <p><strong>Asal:</strong> Medan</p>
+            <p><strong>Username:</strong> wilda</p>
+            <p><strong>Home Directory:</strong> /home/wilda</p>
+            <p><strong>Bukti Login SSH:</strong></p>
+            <img src="ssh-wilda.jpg" alt="Bukti Login SSH Wilda" class="ssh-img" onclick="openPopup('ssh-wilda.jpg')">
+        </div>
+
+        <!-- Biodata Anggota 4 -->
+        <div id="anggota4" class="biodata" style="display: none;">
+            <h2>Biodata Anggota 4</h2>
+            <img src="monalisa.jpeg" alt="Foto Profil Monalisa" class="profil-img" onclick="openPopup('monalisa.jpeg')">
+            <p><strong>Nama:</strong> Monalisa</p>
+            <p><strong>Asal:</strong> Surabaya</p>
+            <p><strong>Username:</strong> monalisa</p>
+            <p><strong>Home Directory:</strong> /home/monalisa</p>
+            <p><strong>Bukti Login SSH:</strong></p>
+            <img src="ssh-monalisa.jpeg" alt="Bukti Login SSH Monalisa" class="ssh-img" onclick="openPopup('ssh-monalisa.jpg')">
+        </div>
+
+        <!-- Biodata Anggota 5 -->
+        <div id="anggota5" class="biodata" style="display: none;">
+            <h2>Biodata Anggota 5</h2>
+            <img src="sania.jpeg" alt="Foto Profil Sania" class="profil-img" onclick="openPopup('sania.jpeg')">
+            <p><strong>Nama:</strong> Sania Bulan Tanjung</p>
+            <p><strong>Asal:</strong> Padang</p>
+            <p><strong>Username:</strong> sania</p>
+            <p><strong>Home Directory:</strong> /home/sania</p>
+            <p><strong>Bukti Login SSH:</strong></p>
+            <img src="ssh-sania.jpg" alt="Bukti Login SSH Sania" class="ssh-img" onclick="openPopup('ssh-sania.jpg')">
+        </div>
+
+        <!-- Biodata Anggota 6 -->
+        <div id="anggota6" class="biodata" style="display: none;">
+            <h2>Biodata Anggota 6</h2>
+            <img src="fathan.jpeg" alt="Foto Profil Fathan" class="profil-img" onclick="openPopup('fathan.jpeg')">
+            <p><strong>Nama:</strong> Fathan Surya Azinuddin</p>
+            <p><strong>Asal:</strong> Jakarta</p>
+            <p><strong>Username:</strong> fathan</p>
+            <p><strong>Home Directory:</strong> /home/fathan</p>
+            <p><strong>Bukti Login SSH:</strong></p>
+            <img src="ssh-fathan.jpg" alt="Bukti Login SSH Fathan" class="ssh-img" onclick="openPopup('ssh-fathan.jpg')">
+        </div>
+
+        <!-- Biodata Anggota 7 -->
+        <div id="anggota7" class="biodata" style="display: none;">
+            <h2>Biodata Anggota 7</h2>
+            <img src="Bagas.jpg" alt="Foto Profil Bagas" class="profil-img" onclick="openPopup('bagas.jpeg')">
+            <p><strong>Nama:</strong> Bagas Felicia Rakhim</p>
+            <p><strong>Asal:</strong> Bandung</p>
+            <p><strong>Username:</strong> bagas</p>
+            <p><strong>Home Directory:</strong> /home/bagas</p>
+            <p><strong>Bukti Login SSH:</strong></p>
+            <img src="ssh-bagas.jpg" alt="Bukti Login SSH Bagas" class="ssh-img" onclick="openPopup('ssh-bagas.jpg')">
+        </div>
+    </div>
+
+    <!-- Popup Gambar -->
+    <div id="imagePopup" class="popup" onclick="closePopup()" style="display: none;">
+        <img id="popupImage" src="" alt="Popup Image">
+    </div>
+</body>
+</html>

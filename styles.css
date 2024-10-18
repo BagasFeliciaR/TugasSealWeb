@@ -1,0 +1,198 @@
+/* Mengatur gaya dasar untuk seluruh halaman */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Latar belakang halaman dengan gradien yang halus */
+body {
+    background: linear-gradient(135deg, #4b79a1, #283e51);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/* Membungkus konten agar lebih rapi */
+.container {
+    width: 80%;
+    max-width: 900px;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* Judul dan deskripsi di header */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+header p {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+/* Daftar anggota dengan efek hover */
+.anggota-list {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.anggota-list li {
+    padding: 15px;
+    margin: 5px 0;
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.anggota-list li:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Gaya untuk biodata yang muncul */
+.biodata {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    padding: 20px;
+    display: none;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+.biodata h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+}
+
+.profil-img {
+    display: block;
+    margin: 10px auto;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Gaya untuk teks dalam biodata */
+.biodata p {
+    margin: 8px 0;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.ssh-img {
+    display: block;
+    margin: 10px auto;
+    width: 80%;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Animasi munculnya biodata */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Objek latar belakang dinamis */
+.background-object {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.2);
+    filter: blur(10px);
+    border-radius: 50%;
+    animation: float 6s infinite ease-in-out;
+}
+
+/* Memposisikan objek latar secara acak */
+.background-object:nth-child(1) { top: 10%; left: 20%; }
+.background-object:nth-child(2) { top: 30%; left: 80%; }
+.background-object:nth-child(3) { top: 60%; left: 10%; }
+.background-object:nth-child(4) { top: 50%; left: 50%; }
+.background-object:nth-child(5) { top: 80%; left: 70%; }
+
+/* Animasi melayang objek latar */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Responsif agar tampil baik di perangkat kecil */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .biodata h2 {
+        font-size: 1.5rem;
+    }
+}
+/* Popup Styling */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
+}
+
+.popup-content {
+    max-width: 90%;
+    max-height: 80vh;
+    display: block;
+    margin: auto;
+    border-radius: 8px;
+}
+
+.popup-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+.popup-close:hover {
+    color: red;
+}
+
+body.popup-active {
+    overflow: hidden;
+}
+
